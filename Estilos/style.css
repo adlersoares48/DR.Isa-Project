@@ -454,3 +454,48 @@ nav ul li a:hover::after {
     border-top: 1px solid #ddd;
     font-size: 0.9rem;
 }
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .footer .container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .footer-logo img {
+        max-width: 200px;
+    }
+
+    .footer-separator {
+        display: none;
+    }
+
+    .footer-contato,
+    .footer-social {
+        margin-bottom: 20px;
+    }
+
+    .footer-social a {
+        margin: 0 8px;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer-contato h3,
+    .footer-social h3 {
+        font-size: 1.2rem;
+    }
+
+    .footer-contato p {
+        font-size: 0.9rem;
+    }
+
+    .footer-logo img {
+        max-width: 180px;
+    }
+
+    .footer-bottom {
+        font-size: 0.8rem;
+    }
+}
