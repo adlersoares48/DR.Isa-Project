@@ -1,7 +1,7 @@
 /* Paleta de cores */
 :root {
-    --cor-principal: #1A365D; /* Azul escuro elegante */
-    --cor-secundaria: #F6C0AC; /* Bege para destaque */
+    --cor-principal: #1A365D;
+    --cor-secundaria: #F6C0AC;
     --cor-texto: #ffffff;
     --cor-hover: #0E2A47;
     --cor-fundo: #f7f7f7;
@@ -21,13 +21,12 @@
     width: 100%;
     height: 100px;
     background-color: var(--cor-principal);
-    padding: 10px 0;  /* Ajuste o padding para manter o cabeçalho compacto */
+    padding: 10px 0;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     z-index: 10;
     display: flex;
     justify-content: space-between;
     align-items: center;
-
     opacity: 0;
     transform: translateY(-30px);
     transition: opacity 1s ease-in-out, transform 1s ease-in-out;
@@ -36,14 +35,14 @@
 /* Aumentando o tamanho da logo sem afetar o cabeçalho */
 .header .logo img {
     margin-left: 60px;
-    width: 250px;  /* Ajuste o tamanho da logo como desejar */
-    height: auto;  /* Mantém a proporção da imagem */
-    max-width: 100%;  /* Evita que a imagem ultrapasse o tamanho do container */
+    width: 250px;
+    height: auto;
+    max-width: 100%;
 }
 
 /* Se necessário, ajuste o padding superior e inferior do header */
 .header .logo {
-    padding-top: 5px;  /* Ajuste esse valor conforme necessário */
+    padding-top: 5px;
     padding-bottom: 5px;
 }
 
@@ -105,12 +104,11 @@ nav ul li a:hover::after {
     width: 100%;
 }
 
-
 /* HERO SECTION */
 .hero {
     position: relative;
     display: flex;
-    justify-content: center;
+    justify-content: flex-end; /* Alinha o conteúdo à direita */
     align-items: center;
     height: 100vh;
     background-image: url("foto2.jpg");
@@ -118,7 +116,8 @@ nav ul li a:hover::after {
     background-position: center;
     background-repeat: no-repeat;
     color: #fff;
-    text-align: center;
+    text-align: right; /* Alinha o texto à direita */
+    padding-right: 20px; /* Adiciona um pouco de espaço à direita */
 }
 
 /* Overlay escuro para melhorar a legibilidade */
@@ -136,7 +135,7 @@ nav ul li a:hover::after {
     position: relative;
     z-index: 2;
     max-width: 600px;
-    text-align: center;
+    text-align: center; 
 }
 
 .hero-text h2 {
@@ -155,22 +154,23 @@ nav ul li a:hover::after {
     margin: 20px 0;
 }
 
+
 /* BOTÃO AGENDAR CONSULTA NO PAINEL */
 .btn-agendar {
-    background-color: var(--cor-principal); /* Cor do texto principal */
-    color: var(--cor-texto); /* Texto branco */
+    background-color: var(--cor-principal);
+    color: var(--cor-texto);
     padding: 12px 30px;
     font-size: 1.1rem;
     text-decoration: none;
     border-radius: 5px;
-    display: inline-block; /* Garante que transform funcione corretamente */
+    display: inline-block;
     transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 /* Hover com deslocamento para cima */
 .btn-agendar:hover {
     background-color: var(--cor-hover);
-    transform: translateY(-5px); /* Agora o deslocamento será mais perceptível */
+    transform: translateY(-5px);
 }
 
 /* SEÇÃO SOBRE */
@@ -229,47 +229,93 @@ nav ul li a:hover::after {
     margin-right: 20px;
 }
 
-/* RESPONSIVIDADE */
+/* Media Queries - Responsividade */
+
+/* Telas pequenas (como dispositivos móveis) */
 @media (max-width: 768px) {
-    /* Ajustes para o header */
     .header {
-        padding: 20px;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
+        padding: 15px 10px;
+        height: auto;
     }
 
-    .header .logo {
-        justify-content: center;
-        margin-bottom: 10px;
+    .header .logo img {
+        width: 180px;
+        margin-left: 20px;
     }
 
-    .header nav {
-        justify-content: center;
+    nav {
+        margin-right: 20px;
     }
 
     nav ul {
         flex-direction: column;
-        align-items: center;
+        align-items: flex-start;
+        margin-top: 20px;
     }
 
     nav ul li {
-        margin-top: 15px;
+        margin-left: 0;
+        margin-bottom: 15px;
     }
 
-    /* Ajustes para a seção sobre */
+    .hero {
+        height: 70vh;
+        background-size: cover;
+    }
+
+    .hero-text h2 {
+        font-size: 1.5rem;
+    }
+
+    .hero-text .destaque {
+        font-size: 2.2rem;
+    }
+
     .sobre .container {
         flex-direction: column;
-        text-align: center;
+        padding: 0 20px;
+    }
+
+    .sobre-img {
+        flex: none;
+        width: 100%;
+        margin-bottom: 20px;
     }
 
     .sobre-texto {
+        flex: none;
         padding-left: 0;
-        margin-top: 30px;
     }
 
-    .logos img {
-        max-height: 40px;
-        margin: 10px;
+    .sobre-texto h2 {
+        font-size: 1.6rem;
+    }
+
+    .sobre-texto p {
+        font-size: 1rem;
+    }
+}
+
+/* Telas extras pequenas (ex: smartphones menores) */
+@media (max-width: 480px) {
+    .hero-text h2 {
+        font-size: 1.3rem;
+    }
+
+    .hero-text .destaque {
+        font-size: 2rem;
+    }
+
+    .sobre-texto h2 {
+        font-size: 1.4rem;
+    }
+
+    .sobre-texto p {
+        font-size: 0.9rem;
+    }
+
+    .btn-agendar {
+        padding: 10px 25px;
+        font-size: 1rem;
     }
 }
