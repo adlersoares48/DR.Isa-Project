@@ -235,9 +235,10 @@ nav ul li a:hover::after {
 @media (max-width: 768px) {
     .header {
         padding: 15px 10px;
-        height: auto;
+        height: auto;  /* Permite que o header ajuste sua altura de acordo com o conteúdo */
     }
 
+    /* Ajuste para a logo e o alinhamento do menu */
     .header .logo img {
         width: 180px;
         margin-left: 20px;
@@ -258,6 +259,7 @@ nav ul li a:hover::after {
         margin-bottom: 15px;
     }
 
+    /* Ajusta a altura do hero em telas menores */
     .hero {
         height: 70vh;
         background-size: cover;
@@ -294,6 +296,11 @@ nav ul li a:hover::after {
     .sobre-texto p {
         font-size: 1rem;
     }
+
+    /* Ajustando o margin-top para evitar sobreposição com o header */
+    .main-content {
+        margin-top: 120px; /* Adicionando espaço para o header */
+    }
 }
 
 /* Telas extras pequenas (ex: smartphones menores) */
@@ -317,5 +324,10 @@ nav ul li a:hover::after {
     .btn-agendar {
         padding: 10px 25px;
         font-size: 1rem;
+    }
+
+    /* Ajustando o margin-top para garantir que o conteúdo não fique coberto */
+    .main-content {
+        margin-top: 130px; /* Mais espaço para evitar sobreposição */
     }
 }
