@@ -1,3 +1,4 @@
+
 /* Paleta de cores */
 :root {
     --cor-principal: #1A365D;
@@ -330,4 +331,126 @@ nav ul li a:hover::after {
     .main-content {
         margin-top: 130px; /* Mais espaço para evitar sobreposição */
     }
+}
+
+/* Estilos Gerais do Footer */
+.footer {
+    background-color: #f6c0acb0;
+    padding: 40px 0;
+    color: #333;
+}
+
+.footer .container {
+    max-width: 1100px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    position: relative;
+}
+
+/* Logo */
+.footer-logo img {
+    max-width: 300px;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.footer-logo img:hover {
+    transform: scale(1.1);
+}
+
+/* Linha separadora dinâmica */
+.footer-separator {
+    width: 4px;
+    height: 120px;
+    background: linear-gradient(to bottom, #1A365D, #4A90E2);
+    animation: moveLine 2s infinite alternate;
+}
+
+@keyframes moveLine {
+    from { transform: translateY(0); }
+    to { transform: translateY(10px); }
+}
+
+/* Contato */
+.footer-contato {
+    text-align: center;
+}
+
+.footer-contato h3 {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+    color: #1A365D;
+}
+
+.footer-contato p {
+    margin: 5px 0;
+    font-size: 1rem;
+}
+
+.footer-contato i {
+    color: #1A365D;
+    margin-right: 8px;
+    font-size: 1.2rem;
+}
+
+/* Hover sublinhado do centro para as laterais */
+.hover-underline {
+    position: relative;
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.3s ease;
+}
+
+.hover-underline::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background: #1A365D;
+    bottom: -3px;
+    left: 50%;
+    transition: width 0.4s ease, left 0.4s ease;
+}
+
+.hover-underline:hover {
+    color: #0E2A47;
+}
+
+.hover-underline:hover::after {
+    width: 100%;
+    left: 0;
+}
+
+/* Redes Sociais */
+.footer-social {
+    text-align: center;
+}
+
+.footer-social h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: #1A365D;
+}
+
+.footer-social a {
+    display: inline-block;
+    margin: 0 10px;
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.footer-social a:hover {
+    transform: scale(1.2);
+    filter: brightness(1.2);
+}
+
+/* Copyright */
+.footer-bottom {
+    text-align: center;
+    margin-top: 30px;
+    padding-top: 15px;
+    border-top: 1px solid #ddd;
+    font-size: 0.9rem;
 }
