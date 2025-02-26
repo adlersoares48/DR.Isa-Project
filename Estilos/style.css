@@ -161,6 +161,7 @@ nav ul li a:hover::after {
     background-color: var(--cor-principal);
     color: var(--cor-texto);
     padding: 12px 30px;
+    margin-top: 40px;
     font-size: 1.1rem;
     text-decoration: none;
     border-radius: 5px;
@@ -297,14 +298,14 @@ nav ul li a:hover::after {
     .sobre-texto p {
         font-size: 1rem;
     }
-
-    /* Ajustando o margin-top para evitar sobreposição com o header */
+    
     .main-content {
-        margin-top: 120px; /* Adicionando espaço para o header */
+        margin-top: 180px; 
+        padding-top: 50px;
     }
 }
 
-/* Telas extras pequenas (ex: smartphones menores) */
+/* Telas extras pequenas (smartphones menores) */
 @media (max-width: 480px) {
     .hero-text h2 {
         font-size: 1.3rem;
@@ -327,10 +328,186 @@ nav ul li a:hover::after {
         font-size: 1rem;
     }
 
-    /* Ajustando o margin-top para garantir que o conteúdo não fique coberto */
     .main-content {
-        margin-top: 130px; /* Mais espaço para evitar sobreposição */
+        margin-top: 180px;
+        padding-top: 50px;
     }
+}
+
+
+/* Seção de Especialidades */
+.especialidades {
+    background-color: #f7f7f7;
+    padding: 80px 0;
+}
+
+.especialidades .container {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1100px;
+    margin: auto;
+    flex-wrap: wrap; /* Adicionando wrap para permitir que os itens se movam para a próxima linha em telas pequenas */
+}
+
+.especialidades-texto {
+    flex: 1;
+    padding-right: 150px;
+    margin-bottom: 30px; /* Para dar espaço quando a lista de especialidades estiver abaixo */
+}
+
+.especialidades-texto h2 {
+    font-size: 2.5rem;
+    color: #1A365D;
+}
+
+.especialidades-texto p {
+    font-size: 1.2rem;
+    margin-top: 20px;
+    color: #333;
+}
+
+.especialidades-lista {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.especialidades-lista ul {
+    list-style: none;
+}
+
+.especialidade-item {
+    margin-bottom: 15px;
+    cursor: pointer;
+    position: relative;
+    width: 100%;
+}
+
+.setinha {
+    font-size: 1.9rem;
+    margin-right: 10px;
+    transition: transform 0.3s ease;
+    color: var(--cor-principal);
+    vertical-align: middle;
+}
+
+.especialidade-titulo {
+    font-size: 1.5rem;
+    color: var(--cor-principal);
+    padding: 5px 0;
+    position: relative;
+    display: inline-block;
+}
+
+.especialidade-titulo::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background-color: var(--cor-secundaria);
+    transition: width 0.3s ease, left 0.3s ease;
+}
+
+.especialidade-titulo:hover::before {
+    
+    width: 100%;
+    left: 0;
+}
+
+/* Descrição das especialidades */
+.descricao-especialidade {
+    max-height: 0;
+    overflow: hidden; 
+    font-size: 1rem;
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #DCEAF5;
+    border-radius: 5px;
+    color: #333;
+    position: relative;
+    transition: max-height 0.3s ease, opacity 0.3s ease, padding 0.3s ease;
+    opacity: 0; /* Inicialmente invisível */
+}
+
+.especialidade-item.active .descricao-especialidade {
+    max-height: 200px; 
+    opacity: 1; /* Torna visível */
+    padding: 10px; 
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .especialidades .container {
+        flex-direction: column;
+        align-items: center; /* Centraliza os itens na tela */
+    }
+
+    .especialidades-texto {
+        text-align: center;
+        padding-right: 0;
+        margin-bottom: 20px;
+    }
+
+    .especialidades-texto h2 {
+        font-size: 2rem;
+    }
+
+    .especialidades-texto p {
+        font-size: 1rem;
+    }
+
+    .especificidades-lista {
+        align-items: center;
+        margin-top: 30px; /* Adiciona um espaçamento entre o texto e a lista */
+    }
+
+    .especialidade-titulo {
+        font-size: 1.3rem;
+        padding-left: 20px;
+    }
+
+    .especialidade-item {
+        width: 100%;
+    }
+}
+
+
+/* Estilo do botão do WhatsApp */
+.whatsapp-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+#whatsapp-btn i {
+    font-size: 30px;
+    color: #fff;
+    background-color: #25D366;
+    border-radius: 50%;
+    padding: 7px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+}
+
+/* Efeito de pulsação */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+#whatsapp-btn i {
+    animation: pulse 1.5s infinite;
 }
 
 /* Estilos Gerais do Footer */

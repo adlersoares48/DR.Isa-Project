@@ -19,3 +19,15 @@ document.addEventListener("DOMContentLoaded", function () {
         lastScroll = currentScroll;
     });
 });
+
+// Selecionando todos os itens de especialidade
+const especialidadeItems = document.querySelectorAll('.especialidade-item');
+
+// Função para alternar a visibilidade das descrições
+especialidadeItems.forEach(item => {
+    item.addEventListener('click', () => {
+        // Alterna a classe active
+        item.classList.toggle('active');
+    });
+});
+
