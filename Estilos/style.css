@@ -1,4 +1,10 @@
 
+html {
+    scroll-behavior: smooth;
+  }
+  
+
+
 /* Paleta de cores */
 :root {
     --cor-principal: #1A365D;
