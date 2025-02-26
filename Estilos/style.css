@@ -263,7 +263,7 @@ nav ul li a:hover::after {
 
     /* Ajusta a altura do hero em telas menores */
     .hero {
-        height: 70vh;
+        height: 100vh;
         background-size: cover;
     }
 
@@ -439,8 +439,15 @@ nav ul li a:hover::after {
 }
 
 /* Responsividade */
+@media (max-width: 1145px){
+    .especialidades .container {
+        margin: 20px;
+    }
+}
+
 @media (max-width: 768px) {
     .especialidades .container {
+        margin: 20px;
         flex-direction: column;
         align-items: center; /* Centraliza os itens na tela */
     }
