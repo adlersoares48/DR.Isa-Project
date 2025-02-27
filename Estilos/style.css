@@ -564,7 +564,7 @@ nav ul li a:hover::after {
 
 .imagem-doutora {
     flex: 1;
-    background-image: url("/Imagens/doutoraIsa.jpg"); 
+    background-image: url("doutoraIsa.jpg"); 
     background-size: cover;
     background-position: center;
     height: 135vh;
