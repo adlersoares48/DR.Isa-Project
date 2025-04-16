@@ -121,7 +121,7 @@ nav ul li a:hover::after {
     justify-content: flex-end; /* Alinha o conteúdo à direita */
     align-items: center;
     height: 100vh;
-    background-image: url("/Imagens/foto2.jpg");
+    background-image: url("foto2.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -654,7 +654,7 @@ nav ul li a:hover::after {
 
 .imagem-doutora {
     flex: 1;
-    background-image: url("/Imagens/doutoraIsa.jpg"); 
+    background-image: url("doutoraIsa.jpg"); 
     background-size: cover;
     background-position: center;
     border-radius: 12px;
